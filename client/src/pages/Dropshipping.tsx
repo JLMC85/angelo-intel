@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { ShoppingCart, ArrowLeft, Star } from "lucide-react";
 import { useLocation } from "wouter";
 import { useState } from "react";
+import { useCart } from "@/contexts/CartContext";
 
 interface Product {
   id: string;
@@ -127,6 +128,7 @@ const TRENDING_PRODUCTS: Product[] = [
 
 export default function Dropshipping() {
   const [, setLocation] = useLocation();
+  const { addItem } = useCart();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"trending" | "price" | "rating">("trending");
 
@@ -281,10 +283,16 @@ export default function Dropshipping() {
                   size="sm"
                   className="w-full bg-indigo-600 hover:bg-indigo-700 text-white"
                   onClick={() => {
-                    window.open(`https://aliexpress.com/search/search.html?SearchText=${encodeURIComponent(product.name)}`, '_blank');
+                    addItem({
+                      id: product.id,
+                      name: product.name,
+                      price: product.price,
+                      quantity: 1,
+                      image: product.image,
+                    });
                   }}
                 >
-                  View on AliExpress
+                  Add to Cart
                 </Button>
               </div>
             </Card>
