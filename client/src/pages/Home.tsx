@@ -196,17 +196,17 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-slate-900 mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-slate-600">
-                <li><a href="#" className="hover:text-indigo-600">About</a></li>
-                <li><a href="#" className="hover:text-indigo-600">Contact</a></li>
-                <li><a href="#" className="hover:text-indigo-600">Support</a></li>
+                <li><a href="/about" className="hover:text-indigo-600">About</a></li>
+                <li><a href="/contact" className="hover:text-indigo-600">Contact</a></li>
+                <li><a href="/shipping" className="hover:text-indigo-600">Shipping & Returns</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-slate-900 mb-4">Legal</h4>
               <ul className="space-y-2 text-sm text-slate-600">
-                <li><a href="#" className="hover:text-indigo-600">Privacy</a></li>
-                <li><a href="#" className="hover:text-indigo-600">Terms</a></li>
-                <li><a href="#" className="hover:text-indigo-600">Cookies</a></li>
+                <li><a href="/privacy" className="hover:text-indigo-600">Privacy</a></li>
+                <li><a href="/terms" className="hover:text-indigo-600">Terms</a></li>
+                <li><a href="/contact" className="hover:text-indigo-600">Contact Us</a></li>
               </ul>
             </div>
           </div>

@@ -10,6 +10,11 @@ import Dropshipping from "./pages/Dropshipping";
 import Gumroad from "./pages/Gumroad";
 import Payhip from "./pages/Payhip";
 import Checkout from "./pages/Checkout";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Shipping from "./pages/Shipping";
 
 function Router() {
   return (
@@ -19,6 +24,11 @@ function Router() {
       <Route path={"/gumroad"} component={Gumroad} />
       <Route path={"/payhip"} component={Payhip} />
       <Route path={"/checkout"} component={Checkout} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/shipping" component={Shipping} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
