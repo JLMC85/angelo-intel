@@ -15,8 +15,10 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Shipping from "./pages/Shipping";
-
+import ColoringBookGenerator from "./pages/ColoringBookGenerator";
+import B2BColoringBooks from "./pages/B2BColoringBooks";
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -29,6 +31,8 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/shipping" component={Shipping} />
+      <Route path="/coloring-book-generator" component={ColoringBookGenerator} />
+      <Route path="/b2b-coloring-books" component={B2BColoringBooks} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
