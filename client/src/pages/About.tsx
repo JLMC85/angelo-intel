@@ -55,8 +55,8 @@ export default function About() {
             <h2 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Contact Us</h2>
             <p className="text-slate-600 mb-4">
               Have questions? We'd love to hear from you! Reach out to us at{" "}
-              <a href="mailto:mcmanusjames85@lookout.com" className="text-indigo-600 hover:text-indigo-700">
-                mcmanusjames85@lookout.com
+              <a href="mailto:McManusJamesLee@gmail.com" className="text-indigo-600 hover:text-indigo-700">
+                McManusJamesLee@gmail.com
               </a>
             </p>
           </div>

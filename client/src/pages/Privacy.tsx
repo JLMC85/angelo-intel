@@ -78,7 +78,7 @@ export default function Privacy() {
                 If you have questions or comments about this Privacy Policy, please contact us at:
               </p>
               <p className="text-slate-600 mt-3">
-                <strong>Email:</strong> <a href="mailto:mcmanusjames85@lookout.com" className="text-indigo-600 hover:text-indigo-700">mcmanusjames85@lookout.com</a>
+                <strong>Email:</strong> <a href="mailto:McManusJamesLee@gmail.com" className="text-indigo-600 hover:text-indigo-700">McManusJamesLee@gmail.com</a>
               </p>
             </div>
           </div>

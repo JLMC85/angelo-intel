@@ -59,8 +59,8 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-indigo-600 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-slate-900">Email</h3>
-                    <a href="mailto:mcmanusjames85@lookout.com" className="text-indigo-600 hover:text-indigo-700">
-                      mcmanusjames85@lookout.com
+                    <a href="mailto:McManusJamesLee@gmail.com" className="text-indigo-600 hover:text-indigo-700">
+                      McManusJamesLee@gmail.com
                     </a>
                   </div>
                 </div>

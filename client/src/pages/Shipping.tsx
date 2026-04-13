@@ -84,7 +84,7 @@ export default function Shipping() {
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-2">Return Process</h3>
                   <ol className="list-decimal list-inside space-y-1">
-                    <li>Contact us at <a href="mailto:mcmanusjames85@lookout.com" className="text-indigo-600 hover:text-indigo-700">mcmanusjames85@lookout.com</a> with your order number</li>
+                    <li>Contact us at <a href="mailto:McManusJamesLee@gmail.com" className="text-indigo-600 hover:text-indigo-700">McManusJamesLee@gmail.com</a> with your order number</li>
                     <li>Receive return shipping instructions</li>
                     <li>Ship the item back to us (prepaid label not included)</li>
                     <li>Once received and inspected, we'll process your refund</li>
@@ -115,8 +115,8 @@ export default function Shipping() {
               <p className="text-slate-600 mb-4">
                 If you have any questions about our shipping or returns policy, please don't hesitate to contact us.
               </p>
-              <a href="mailto:mcmanusjames85@lookout.com" className="text-indigo-600 hover:text-indigo-700 font-semibold">
-                mcmanusjames85@lookout.com
+              <a href="mailto:McManusJamesLee@gmail.com" className="text-indigo-600 hover:text-indigo-700 font-semibold">
+                McManusJamesLee@gmail.com
               </a>
             </div>
           </div>

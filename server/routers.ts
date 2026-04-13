@@ -5,6 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { fetchTrendingProducts, searchProducts, createAliExpressOrder } from "./aliexpress";
 import { getAliexpressProducts, createOrder, createOrderItems } from "./db";
+import { stripeRouter } from "./stripe-router";
 
 export const appRouter = router({
   system: systemRouter,
@@ -114,6 +115,9 @@ export const appRouter = router({
         };
       }),
   }),
+
+  // Stripe payment router
+  stripe: stripeRouter,
 });
 
 export type AppRouter = typeof appRouter;

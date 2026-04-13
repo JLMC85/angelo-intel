@@ -15,6 +15,13 @@
       "when": 1776026589756,
       "tag": "0001_slippery_chat",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1776047405152,
+      "tag": "0002_sweet_mister_fear",
+      "breakpoints": true
     }
   ]
 }

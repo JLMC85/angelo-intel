@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, aliexpressProducts, orders, orderItems, InsertOrder, InsertOrderItem } from "../drizzle/schema";
+import { InsertUser, users, aliexpressProducts, orders, orderItems, stripePayments, stripeSubscriptions, InsertOrder, InsertOrderItem, InsertStripePayment, InsertStripeSubscription } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -134,6 +134,48 @@ export async function getOrderItems(orderId: number) {
   const db = await getDb();
   if (!db) return [];
   return db.select().from(orderItems).where(eq(orderItems.orderId, orderId));
+}
+
+// Stripe Payment Queries
+
+export async function createStripePayment(payment: InsertStripePayment) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.insert(stripePayments).values(payment);
+}
+
+export async function getStripePaymentByIntentId(intentId: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(stripePayments).where(eq(stripePayments.stripePaymentIntentId, intentId)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updateStripePaymentStatus(intentId: string, status: 'pending' | 'succeeded' | 'failed' | 'canceled') {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.update(stripePayments).set({ status }).where(eq(stripePayments.stripePaymentIntentId, intentId));
+}
+
+// Stripe Subscription Queries
+
+export async function createStripeSubscription(subscription: InsertStripeSubscription) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.insert(stripeSubscriptions).values(subscription);
+}
+
+export async function getStripeSubscriptionById(subscriptionId: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(stripeSubscriptions).where(eq(stripeSubscriptions.stripeSubscriptionId, subscriptionId)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updateStripeSubscriptionStatus(subscriptionId: string, status: 'active' | 'paused' | 'canceled' | 'incomplete' | 'incomplete_expired') {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.update(stripeSubscriptions).set({ status }).where(eq(stripeSubscriptions.stripeSubscriptionId, subscriptionId));
 }
 
 // TODO: add feature queries here as your schema grows.
